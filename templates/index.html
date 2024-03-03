@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <title>Стартовая страница Python2 homework</title>
+    <style>
+        li {
+            list-style-type: none;
+        }
+        li a {
+            color: #d64161;
+            font-size: 1em;
+            margin-left: 50px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hi!</h1>
+    <h5>{{ utc_dt }}</h5>
+    <hr>
+    <ul>
+        <li><a href="{{ url_for('base_index') }}">Задание 1</a></li>
+        <li><a href="{{ url_for('get_data') }}">Задание 2</a></li>
+        <li><a href="{{ url_for('get_data2') }}">Задание 3</a></li>
+        <li><a href="{{ url_for('openModal') }}">Открыть модальное окно</a></li>
+    </ul>
+    <hr>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block form2 %}
+<div class="form2">
+    {%for e in err%}
+    <p class="f_err"> {{e}} </p>
+    {%endfor%}
+
+    <div class="form_container">    
+        <form action="/form1/" method="post" enctype="multipart/form-data">        
+            <p>Форма 2</p>
+            <input type="text"   placeholder="Ваше имя" name="name"  value = "{{ data['name'] }}" ><br>
+            <input type="email"  placeholder="email"    name="email" value="{{data['email']}}" ><br>
+            <input type="number" placeholder="Возраст"  name = "age" value = "{{ data['age']}}" ><br>
+            <select id="data1" name = "select1"><br>
+                <option value="v1" {% if data['select1']=='v1' %} selected {% endif %} >Дата1</option>
+                <option value="v2" {% if data['select1']=='v2' %} selected {% endif %} >Дата2</option>
+                <option value="v3" {% if data['select1']=='v3' %} selected {% endif %} >Дата3</option>
+            </select><br>
+            <!-- <input type="file" placeholder="Ваш файл" name = "file1"><br> -->
+
+            <input type="reset">
+            <input type="submit">
+
+        </form>
+    </div>
+</div>
+{% endblock %}
